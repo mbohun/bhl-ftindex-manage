@@ -11,6 +11,9 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
+bhl.service.url.root = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+bhl.service.apikey = "be62de68-4468-475a-82ba-cc6ae4353971"
+
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false

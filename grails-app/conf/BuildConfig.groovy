@@ -42,7 +42,7 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
 
-        // runtime 'mysql:mysql-connector-java:5.1.22'
+        runtime 'postgresql:postgresql:9.1-901.jdbc4'
     }
 
     plugins {
@@ -52,7 +52,7 @@ grails.project.dependency.resolution = {
         compile ":jquery-ui:1.8.24"
         runtime ":resources:1.2.RC2"
         compile (":twitter-bootstrap:2.3.2") { excludes 'svn' }
-
+        compile ':csv:0.3.1'
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
