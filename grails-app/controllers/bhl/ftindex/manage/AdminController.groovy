@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat
 class AdminController {
 
     def sessionFactory
+    def settingService
+    def jobManagerService
 
     def index() {}
 
@@ -64,6 +66,29 @@ class AdminController {
 
         redirect(action: 'items')
 
+    }
+
+    def schedule() {
+        def isRunning = settingService.getSettingValue(SettingService.INDEX_JOB_RUNNING_KEY) == "true"
+        def jobs = jobManagerService.getJobs("BHLJobs")
+
+        def runningJobs = jobManagerService.quartzScheduler.currentlyExecutingJobs
+
+
+        [isRunning: isRunning, jobs: jobs, runningJobs: runningJobs]
+    }
+
+    def triggerIndexingJob() {
+        IndexingJob.triggerNow([:])
+        redirect(action: 'schedule')
+    }
+
+    def interruptIndexingJob() {
+        def jobs = jobManagerService.getJobs("BHLJobs")
+        jobs.each {
+            jobManagerService.interruptJob("BHLJobs", it.name)
+        }
+        redirect(action: 'schedule')
     }
 
 }

@@ -53,6 +53,7 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.2.RC2"
         compile (":twitter-bootstrap:2.3.2") { excludes 'svn' }
         compile ':csv:0.3.1'
+        compile ":quartz:1.0-RC9"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"

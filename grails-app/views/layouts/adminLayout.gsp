@@ -45,6 +45,7 @@
             <div class="span3">
                 <ul class="nav nav-list nav-stacked nav-tabs">
                     <bhl:breadcrumbItem href="${createLink(controller: 'admin', action: 'items')}" title="Items" />
+                    <bhl:breadcrumbItem href="${createLink(controller: 'admin', action: 'schedule')}" title="Schedule" />
                 </ul>
             </div>
 
