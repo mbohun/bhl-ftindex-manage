@@ -4,13 +4,12 @@ import org.hibernate.FlushMode
 import org.springframework.web.multipart.MultipartFile
 import org.springframework.web.multipart.MultipartHttpServletRequest
 
-import java.text.SimpleDateFormat
-
 class AdminController {
 
     def sessionFactory
     def settingService
     def jobManagerService
+    def BHLService
 
     def index() {}
 
@@ -22,6 +21,39 @@ class AdminController {
     }
 
     def loadItems() {
+    }
+
+    def loadSingleItem() {
+    }
+
+    def uploadSingleItem() {
+        def itemId = params.itemId
+        if (!itemId) {
+            flash.errorMessage = "You must specify an item id!"
+            redirect(action:'loadSingleItem')
+            return
+        }
+
+        def existing = Item.findByItemId(itemId)
+        if (existing) {
+            flash.errorMessage = "This item already exists in the items table"
+            redirect(action:'loadSingleItem')
+            return
+        }
+
+        def itemMetaData = this.BHLService.getItemMetaData(itemId, false, false)
+        if (!itemMetaData) {
+            flash.errorMessage = "This item already exists in the items table"
+            redirect(action:'loadSingleItem')
+            return
+        }
+
+        def md = itemMetaData.Result
+
+        def item = new Item(itemId: itemId, internetArchiveId: md?.SourceIdentifier, primaryTitleId: md?.PrimaryTitleID, volume: md?.Volume, title: md?.Title ?: '')
+        item.save(failOnError: true)
+
+        redirect(action:'items')
     }
 
     def uploadItems() {

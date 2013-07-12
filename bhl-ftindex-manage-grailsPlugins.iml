@@ -87,6 +87,30 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sf.opencsv/opencsv/jars/opencsv-2.3.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/postgresql/postgresql/jars/postgresql-9.1-901.jdbc4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.eclipse.jdt.core.compiler/ecj/jars/ecj-3.7.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.woodstox/wstx-asl/jars/wstx-asl-3.2.7.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.6.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-codec/commons-codec/jars/commons-codec-1.6.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-httpclient/commons-httpclient/jars/commons-httpclient-3.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.solr/solr-solrj/jars/solr-solrj-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.google.guava/guava/jars/guava-r05.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-fileupload/commons-fileupload/jars/commons-fileupload-1.2.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-grouping/jars/lucene-grouping-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-spellchecker/jars/lucene-spellchecker-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-spatial/jars/lucene-spatial-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-phonetic/jars/lucene-phonetic-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-misc/jars/lucene-misc-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-kuromoji/jars/lucene-kuromoji-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/jakarta-regexp/jakarta-regexp/jars/jakarta-regexp-1.4.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-queries/jars/lucene-queries-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-memory/jars/lucene-memory-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-highlighter/jars/lucene-highlighter-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-analyzers/jars/lucene-analyzers-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.lucene/lucene-core/jars/lucene-core-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.solr/solr-core/jars/solr-core-3.6.2.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.2.4.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.2.5.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-io/commons-io/jars/commons-io-2.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -12,7 +12,7 @@ class IndexingJob implements InterruptableJob {
     boolean running
 
     static triggers = {
-      simple repeatInterval: 1000 * 60 * 60
+      simple repeatInterval: 1000 * 60 * 60, startDelay: 1000 * 60 * 60
     }
 
     def group = "BHLJobs"
@@ -24,6 +24,7 @@ class IndexingJob implements InterruptableJob {
             def item = Item.first()
             if (item) {
                 indexingService.indexItem(item)
+                println "Purging item ${item.id}"
                 item.delete(flush: true)
             } else {
                 running = false

@@ -1,4 +1,3 @@
-<%@ page import="bhl.ftindex.manage.Item" %>
 %{--
   - ﻿Copyright (C) 2013 Atlas of Living Australia
   - All Rights Reserved.
@@ -22,21 +21,28 @@
     </head>
 
     <body>
-        <content tag="pageTitle">Items</content>
+        <content tag="pageTitle">Load Items</content>
 
         <content tag="adminButtonBar">
-            <button id="btnLoadSingle" class="btn">Load Single Item</button>
-            <button id="btnLoad" class="btn">Load Items</button>
-            <button id="btnDeleteAll" class="btn btn-danger">Delete all items</button>
         </content>
 
-        <div class="row">
+        <h4>Stage an individual item for indexing</h4>
+        <g:form action="uploadSingleItem" class="form-horizontal">
 
-            <div class="span12">
-                ${Item.count()} Items currently in database
+            <div class="control-group">
+                <label class="control-label" for="itemId">Item ID</label>
+
+                <div class="controls">
+                    <input type="text" name="itemId" id="itemId" placeholder="Item ID">
+                </div>
             </div>
 
-        </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-small btn-primary">Stage Item for Indexing</button>
+                </div>
+            </div>
+        </g:form>
     </body>
 </html>
 <r:script type="text/javascript">
@@ -45,19 +51,13 @@
 
         $("#btnDeleteAll").click(function(e) {
             e.preventDefault();
-            window.location = "${createLink(action:'deleteAllItems')}";
+            window.location = "${createLink(action: 'deleteAllItems')}";
         });
 
         $("#btnLoad").click(function(e) {
             e.preventDefault();
-            window.location = "${createLink(action:'loadItems')}";
+            window.location = "${createLink(action: 'loadItems')}";
         });
-
-        $("#btnLoadSingle").click(function(e) {
-            e.preventDefault();
-            window.location = "${createLink(action:'loadSingleItem')}";
-        });
-
 
     });
 

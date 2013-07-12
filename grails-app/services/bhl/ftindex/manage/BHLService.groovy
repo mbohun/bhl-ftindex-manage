@@ -11,6 +11,14 @@ class BHLService {
         return JSON.parse(result)
     }
 
+    def getTitleMetaData(Item item, boolean items) {
+        if (!item || !item.primaryTitleId) {
+            return null
+        }
+        def result = callService("GetTitleMetadata", [titleid:item.primaryTitleId,items: items ? 't' : 'f'])
+        return JSON.parse(result)
+    }
+
     private String callService(String op, Map params) {
         def urlRoot = grailsApplication.config.bhl.service.url.root
         def apikey = grailsApplication.config.bhl.service.apikey

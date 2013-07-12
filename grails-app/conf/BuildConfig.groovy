@@ -41,8 +41,12 @@ grails.project.dependency.resolution = {
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-
         runtime 'postgresql:postgresql:9.1-901.jdbc4'
+        compile 'org.apache.solr:solr-solrj:3.6.2'
+        compile 'org.apache.solr:solr-core:3.6.2'
+        compile "commons-httpclient:commons-httpclient:3.0.1"
+        compile "commons-io:commons-io:2.4"
+        compile 'org.apache.httpcomponents:httpclient:4.2.5'
     }
 
     plugins {
@@ -54,6 +58,8 @@ grails.project.dependency.resolution = {
         compile (":twitter-bootstrap:2.3.2") { excludes 'svn' }
         compile ':csv:0.3.1'
         compile ":quartz:1.0-RC9"
+
+
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"
