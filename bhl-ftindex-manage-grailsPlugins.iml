@@ -111,6 +111,8 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.2.4.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.2.5.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-io/commons-io/jars/commons-io-2.4.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.james/apache-mime4j/jars/apache-mime4j-0.6.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpmime/jars/httpmime-4.0.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

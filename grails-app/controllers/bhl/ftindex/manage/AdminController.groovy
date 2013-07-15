@@ -13,10 +13,22 @@ class AdminController {
 
     def index() {}
 
-    def items() {}
+    def items() {
+        def errorItems = Item.findAllByStatus(ItemStatus.Error, [max: params.max ?: 10, offset: params.offset ?: 0])
+        def totalCount = Item.countByStatus(ItemStatus.Error)
+        [errorItems: errorItems, totalCount: totalCount]
+    }
 
     def deleteAllItems() {
         Item.executeUpdate("delete Item");
+        redirect(action:'items')
+    }
+
+    def deleteItem() {
+        def item = Item.get(params.int("id"))
+        if (item) {
+            item.delete()
+        }
         redirect(action:'items')
     }
 

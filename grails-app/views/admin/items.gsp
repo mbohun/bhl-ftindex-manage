@@ -34,6 +34,33 @@
 
             <div class="span12">
                 ${Item.count()} Items currently in database
+
+                <h4>Items in Error</h4>
+                <table class="table table-bordered table-striped">
+                    <thread>
+                        <th>ItemID</th>
+                        <th>Internet Archive Id</th>
+                        <th>Title</th>
+                        <th>Volume</th>
+                        <th>Status</th>
+                        <th>Retry Count</th>
+                        <th></th>
+                    </thread>
+                    <tbody>
+                        <g:each in="${errorItems}" var="item">
+                            <tr>
+                            <td>${item.itemId}</td>
+                            <td>${item.internetArchiveId}</td>
+                            <td>${item.title}</td>
+                            <td>${item.volume}</td>
+                            <td>${item.status}</td>
+                            <td>${item.retryCount}</td>
+                            <td><a href="${createLink(action:'deleteItem', id: item.id)}" class="btn btn-mini btn-danger"><i class="icon-remove icon-white"></i></a></td>
+                            </tr>
+                        </g:each>
+                    </tbody>
+                </table>
+                <g:paginate total="${totalCount ?: 0}" />
             </div>
 
         </div>
@@ -62,4 +89,5 @@
     });
 
 </r:script>
+
 

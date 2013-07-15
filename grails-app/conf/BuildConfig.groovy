@@ -47,6 +47,7 @@ grails.project.dependency.resolution = {
         compile "commons-httpclient:commons-httpclient:3.0.1"
         compile "commons-io:commons-io:2.4"
         compile 'org.apache.httpcomponents:httpclient:4.2.5'
+        compile 'org.apache.httpcomponents:httpmime:4.0.3'
     }
 
     plugins {

@@ -20,16 +20,33 @@ class IndexingJob implements InterruptableJob {
 
     def execute() {
         running = true
+        println ("Indexing Job Started")
         while (running) {
-            def item = Item.first()
+            def item = Item.findByStatusIsNullOrStatus(ItemStatus.Pending)
             if (item) {
-                indexingService.indexItem(item)
-                println "Purging item ${item.id}"
-                item.delete(flush: true)
+                try {
+                    indexingService.indexItem(item)
+                    item.delete(flush: true)
+                } catch (Exception ex) {
+                    item.status = ItemStatus.Error
+                    item.save(flush: true)
+                }
             } else {
-                running = false
+                item = Item.findByStatusAndRetryCountLessThan(ItemStatus.Error, 5)
+                if (item) {
+                    try {
+                        indexingService.indexItem(item)
+                        item.delete(flush: true)
+                    } catch (Exception ex) {
+                        item.retryCount++
+                        item.save(flush: true)
+                    }
+                } else {
+                    running = false
+                }
             }
         }
+        println ("Indexing Job Finished")
     }
 
     void interrupt() throws UnableToInterruptJobException {
@@ -37,6 +54,6 @@ class IndexingJob implements InterruptableJob {
     }
 
     void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        println "here in execute 2"
     }
+
 }

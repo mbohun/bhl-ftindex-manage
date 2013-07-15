@@ -56,12 +56,11 @@ class IndexingService {
 
         } catch (Exception ex) {
             ex.printStackTrace();
+            throw ex
         }
-
     }
 
-    private void indexPage(Item item, String pageId, String pageText, SolrServer server, itemMetaData, titleMetaData) {
-        println "Indexing Page ID ${pageId} - Item ${item.itemId}"
+    private static void indexPage(Item item, String pageId, String pageText, SolrServer server, itemMetaData, titleMetaData) {
    		if (!StringUtils.isEmpty(pageText)) {
    			SolrInputDocument doc = new SolrInputDocument();
    			doc.addField("id", pageId, 1.0f);
@@ -106,7 +105,7 @@ class IndexingService {
 
    	}
 
-   	private void addTitleMetadata(SolrInputDocument doc, titleData) {
+   	private static void addTitleMetadata(SolrInputDocument doc, titleData) {
    		// Full title
    		addField(titleData, "FullTitle", "fullTitle", doc);
    		// Publisher Name

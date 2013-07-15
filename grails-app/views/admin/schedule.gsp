@@ -21,6 +21,18 @@
         <title>Administration</title>
     </head>
 
+    <r:script>
+
+        $(document).ready(function() {
+            setTimeout(reloadPage, 5 * 1000);
+        });
+
+        function reloadPage() {
+            window.location ="${createLink(action:'schedule')}";
+        }
+
+    </r:script>
+
     <body>
 
         <content tag="pageTitle">Schedule</content>
@@ -28,24 +40,19 @@
         <content tag="adminButtonBar">
         </content>
 
-        <div class="alert alert-info">
-            <g:each in="${runningJobs}" var="job">
+        <div class="alert ${runningJobs.size() > 0 ? 'alert-info' : ''}">
+            <g:if test="${runningJobs.size() > 0}">
                 <div>
-                    ${job.jobInstance}
+                    Indexing job is running
                 </div>
-            </g:each>
-        </div>
 
-        <table class="table table-striped table-bordered">
-            <g:each in="${jobs}" var="job">
-                 <tr>
-                     <td>
-                         ${job.name}
-                     </td>
-                     <td></td>
-                 </tr>
-            </g:each>
-         </table>
+            </g:if>
+            <g:else>
+                <div>
+                    Indexing job is not running
+                </div>
+            </g:else>
+        </div>
 
         <table class="table table-striped table-bordered">
             <tr>
