@@ -48,6 +48,9 @@ grails.project.dependency.resolution = {
         compile "commons-io:commons-io:2.4"
         compile 'org.apache.httpcomponents:httpclient:4.2.5'
         compile 'org.apache.httpcomponents:httpmime:4.0.3'
+        compile "org.tmatesoft.svnkit:svnkit:1.3.3", {
+            excludes "jna", "trilead-ssh2", "sqljet"
+        }
     }
 
     plugins {
