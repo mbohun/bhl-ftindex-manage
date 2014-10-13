@@ -56,7 +56,7 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.2"
         compile ":jquery-ui:1.8.24"
         runtime ":resources:1.2.RC2"
-        compile (":twitter-bootstrap:2.3.2") { excludes 'svn' }
+        compile ":twitter-bootstrap:2.3.2"
         compile ':csv:0.3.1'
         compile ":quartz:1.0-RC9"
 
